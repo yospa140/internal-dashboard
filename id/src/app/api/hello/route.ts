@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import {connect} from "@/dbConfig/dbConfig";
-
+fetch("/api/hello")
 connect()
 
 export async function GET() {
