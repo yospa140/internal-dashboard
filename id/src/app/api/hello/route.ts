@@ -1,10 +1,7 @@
 import { NextResponse } from "next/server";
-import {connect} from "@/dbConfig/dConfig";
-fetch("/api/hello")
-connect()
+import { connect } from "@/src/dbConfig/dbConfig";
 
 export async function GET() {
-   return NextResponse.json({
-    message: "Hello from backend 🚀",
-  });
+  await connect();
+  return NextResponse.json({ message: "Hello" });
 }
