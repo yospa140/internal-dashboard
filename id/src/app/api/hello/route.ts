@@ -1,8 +1,11 @@
+import { connectToDB } from "@/lib/mongodb";
 import { NextResponse } from "next/server";
-import { connect } from "@/app/dbConfig/dbConfig";
-connect();
 
 export async function GET() {
-  await connect();
-  return NextResponse.json({ message: "Hello" });
+  try {
+    await connectToDB();
+    return NextResponse.json({ message: "Connected successfully" });
+  } catch (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
 }
