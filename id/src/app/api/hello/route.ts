@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import {connect} from "@/dbConfig/dConfig";
 fetch("/api/hello")
 connect()
 
